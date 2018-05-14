@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bookmarker Application</title>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+</head>
+<body onload="fetchBookmarks()">
+	<header class="jumbotron">
+		<div class="container">
+			<h1 id='heading'>Bookmarker Application</h1>
+			<p>This is an application which allows you to book mark webpages using the below form. Please enter the necessary details in the below form and submit to save the bookmark. You can find the saved bookmarks in the table below the form. You also options to visit the web pages directly and also delete them as bookmarks.</p>
+		</div>
+	</header>
+	<br><br>
+	<div class="container">
+		<h2 id='formheading'>Enter details below</h2>
+		<form id="myform">
+			<div class="form- group">
+        <label>Website Name</label>
+        <input type="text" class="form-control" id="siteName" placeholder="Website Name">
+      </div>
+      <div class="form- group">
+        <label>Website URL</label>
+        <input type="text" class="form-control" id="siteURL" placeholder="Website URL">
+      </div>
+      <button type="submit" class="btn btn-primary">submit</button>
+		</form>
+	</div>
+	<br><br>
+	<div class="container">
+		<div class="row marketing">
+			<div class="col-lg-12">
+				<div id='bookmarksresults'>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		function loaddata(){
+			var wpage = document.getElementsByName('webpage');
+			var bname = document.getElementsByName('bookmarkname');
+			console.log(wpage);
+			console.log(bname);
+
+			if(wpage == '' || bname == ''){
+				alert("Enter all necessary details");
+			}
+			else{
+				localStorage.setItem(bname, wpage);
+
+			}
+		}
+	</script>
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+	<script src="main.js"></script>
+</body>
+</html>
